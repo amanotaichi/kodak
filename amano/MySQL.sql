@@ -15,3 +15,15 @@ insert into stations VALUES
 (6,'新大阪','515.35');
 
 SELECT * FROM stations;
+
+create table transport (
+    date date not null,
+    seq int not null,
+    departure varchar(20),
+    arrival varchar(20),
+    via varchar(40),
+    amount int,
+    primary key(date,seq)
+);
+
+select * from transport;
