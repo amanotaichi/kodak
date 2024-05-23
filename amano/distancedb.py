@@ -10,17 +10,21 @@ stations_end = args[2]
 # データベース全取得
 # stationslist = session.query(Stations).all()
 
+# # データベース選択取得
+# stationslist_start = session.query(Stations).filter_by(name = stations_start).all()
+# stationslist_end = session.query(Stations).filter_by(name = stations_end).all()
+
+# # kiloのデータを取り出す
+# kilo_start = [station.kilo for station in stationslist_start]
+# kilo_end = [station.kilo for station in stationslist_end]
+
+# # Decimal型をfloat型に変換
+# kilo_start_float = [float(k) for k in kilo_start]
+# kilo_end_float = [float(k) for k in kilo_end]
+
 # データベース選択取得
-stationslist_start = session.query(Stations).filter_by(name = stations_start).all()
-stationslist_end = session.query(Stations).filter_by(name = stations_end).all()
-
-# kiloのデータを取り出す
-kilo_start = [station.kilo for station in stationslist_start]
-kilo_end = [station.kilo for station in stationslist_end]
-
-# Decimal型をfloat型に変換
-kilo_start_float = [float(k) for k in kilo_start]
-kilo_end_float = [float(k) for k in kilo_end]
+stationslist_start = session.query(Stations).filter_by(name = stations_start).kilo()
+stationslist_end = session.query(Stations).filter_by(name = stations_end).kilo()
 
 # 2つの駅の東京からの距離を表示
 print(kilo_start_float[0])
