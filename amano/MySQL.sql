@@ -27,3 +27,7 @@ create table transport (
 );
 
 select * from transport;
+
+insert INTO lunch VALUES
+    (1, "唐揚げ定食", 760, 0.323),
+    (2, "カレーセット", 850, 0.284);

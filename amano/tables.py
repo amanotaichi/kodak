@@ -1,5 +1,5 @@
 import sys
-from sqlalchemy import Column, String, Date, Integer, Numeric, DateTime
+from sqlalchemy import Column, String, Date, Integer, Numeric, DateTime, Float
 from databases import Base
 from databases import ENGINE
 
@@ -19,6 +19,14 @@ class Transport(Base):
     arrival = Column('arrival', String(20))
     via = Column('via', String(40))
     amount = Column('amount', Integer)
+
+#テーブル：Lunchの定義
+class Lunch(Base):
+    __tablename__ = 'lunch'
+    seq = Column('seq', Integer, primary_key = True)
+    name = Column('name', String(20))
+    price = Column('price', Integer)
+    cost = Column('cost', Float)
 
 def main(args):
     """
