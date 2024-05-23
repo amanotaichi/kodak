@@ -5,7 +5,10 @@ INSERT INTO stations VALUES(1, "東京", 0.00),
 (5, "京都", 476.31),
 (6, "新大阪", 515.35);
 
-SELECT * FROM stations;
+
+DROP TABLE transport;
+SELECT * FROM transport;
+
 
 CREATE TABLE stations (
     seq INT NOT NULL PRIMARY KEY,
