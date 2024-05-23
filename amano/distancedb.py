@@ -27,7 +27,7 @@ stationslist_start = session.query(Stations).filter_by(name = stations_start).ki
 stationslist_end = session.query(Stations).filter_by(name = stations_end).kilo()
 
 # 2つの駅の東京からの距離を表示
-print(kilo_start_float[0])
+print(stationslist_start)
 print(kilo_end_float[0])
 
 # 2つの駅間の距離を計算
