@@ -1,5 +1,5 @@
 import sys
-from sqlalchemy import Column,VARCHAR,DECIMAL,Integer
+from sqlalchemy import Column,VARCHAR,DECIMAL,Integer,Date
 from database import Base
 from database import ENGINE
 
@@ -9,6 +9,17 @@ class Stations(Base):
     seq = Column('seq', Integer, primary_key = True)
     name = Column('name',VARCHAR(20))
     kilo = Column('kilo',DECIMAL(6,2))
+
+#テーブル：Transport2
+class Transport2(Base):
+     __tablename__ = 'transport2'
+     date = Column('date',Date,primary_key = True)
+     seq = Column('seq',Integer,primary_key = True)
+     departure = Column('departure',VARCHAR(20))
+     arrival =  Column('arrival',VARCHAR(20))
+     via = Column('via',VARCHAR(40))
+     amount = Column('amount',Integer)
+
 
 
 def main(args):
